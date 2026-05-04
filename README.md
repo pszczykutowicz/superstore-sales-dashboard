@@ -17,6 +17,22 @@ Power BI dashboard with advanced DAX measures.
 
 ---
 
+## Screenshots
+
+### Page 1 — Total Sales Overview
+![Overview](https://raw.githubusercontent.com/pszczykutowicz/superstore-sales-dashboard/main/screenshots/page1_overview.png)
+
+### Page 2 — Top 10 Products
+![Products](https://raw.githubusercontent.com/pszczykutowicz/superstore-sales-dashboard/main/screenshots/page2_products.png)
+
+### Page 3 — Customer Segments
+![Segments](https://raw.githubusercontent.com/pszczykutowicz/superstore-sales-dashboard/main/screenshots/page3_segments.png)
+
+### Page 4 — YoY Analysis
+![YoY](https://raw.githubusercontent.com/pszczykutowicz/superstore-sales-dashboard/main/screenshots/page4_yoy.png)
+
+---
+
 ## Stack
 
 | Layer | Technology |
