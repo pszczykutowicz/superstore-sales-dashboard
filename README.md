@@ -19,16 +19,16 @@ Power BI dashboard with advanced DAX measures.
 
 ## Screenshots
 
-### Page 1 — Total Sales Overview
+### Page 1 - Total Sales Overview
 ![Overview](https://raw.githubusercontent.com/pszczykutowicz/superstore-sales-dashboard/main/screenshots/page1_overview.png)
 
-### Page 2 — Top 10 Products
+### Page 2 - Top 10 Products
 ![Products](https://raw.githubusercontent.com/pszczykutowicz/superstore-sales-dashboard/main/screenshots/page2_products.png)
 
-### Page 3 — Customer Segments
+### Page 3 - Customer Segments
 ![Segments](https://raw.githubusercontent.com/pszczykutowicz/superstore-sales-dashboard/main/screenshots/page3_segments.png)
 
-### Page 4 — YoY Analysis
+### Page 4 - YoY Analysis
 ![YoY](https://raw.githubusercontent.com/pszczykutowicz/superstore-sales-dashboard/main/screenshots/page4_yoy.png)
 
 ---
@@ -37,7 +37,7 @@ Power BI dashboard with advanced DAX measures.
 
 | Layer | Technology |
 |---|---|
-| Source data | Kaggle — Superstore Sales Dataset (9 800 rows, 2015–2018) |
+| Source data | Kaggle - Superstore Sales Dataset (9 800 rows, 2015–2018) |
 | ETL | Python 3 (pandas, SQLAlchemy, pymysql) |
 | Database | MySQL 8 via XAMPP |
 | Analytical layer | SQL Views |
@@ -81,15 +81,15 @@ Power BI
 - **Technology** category drives the largest share of sales (~37%), followed closely by Furniture and Office Supplies — revenue is distributed relatively evenly across categories
 - **Consumer segment** dominates by volume (50% of sales), but **Corporate** shows a comparable average order value — they buy less often but spend more per transaction
 - **Strong Q4 seasonality** is visible across all segments, with November consistently being the peak month
-- **YoY growth of 30.6% in 2017 vs 2016** — the strongest growth year in the dataset
-- **Home Office** is the smallest segment but shows consistent presence — potential growth opportunity
+- **YoY growth of 30.6% in 2017 vs 2016** - the strongest growth year in the dataset
+- **Home Office** is the smallest segment but shows consistent presence - potential growth opportunity
 
 ---
 
 ## SQL Layer
 
 Views encapsulate all aggregation logic, keeping Power BI queries clean and fast.
-Example — monthly sales summary view:
+Example - monthly sales summary view:
 
 ```sql
 CREATE OR REPLACE VIEW vw_sales_summary AS
@@ -117,7 +117,7 @@ GROUP BY
 
 ## Dashboard Pages
 
-### Page 1 — Total Sales Overview
+### Page 1 - Total Sales Overview
 High-level summary of business performance across all dimensions.
 - KPI cards: Total Sales, Total Orders, Total Customers
 - Line chart: monthly sales trend
@@ -125,14 +125,14 @@ High-level summary of business performance across all dimensions.
 - Donut chart: sales split by category
 - Slicers: Year, Region, Category, Segment
 
-### Page 2 — Top 10 Products
+### Page 2 - Top 10 Products
 Product-level analysis focused on best performing items.
-- KPI cards: Top 10 Sales, Top 10 Orders, Top 10 Customers — all scoped to Top 10 context via visual-level Top N filters
+- KPI cards: Top 10 Sales, Top 10 Orders, Top 10 Customers - all scoped to Top 10 context via visual-level Top N filters
 - Bar chart: Top 10 Products by Sales with category color coding
 - Bar chart: Sales by Sub-Category with category breakdown
 - Slicers: Year, Region, Category, Sub-Category
 
-### Page 3 — Customer Segments
+### Page 3 - Customer Segments
 Comparison of Consumer, Corporate and Home Office segments.
 - KPI cards: Total Sales, Total Orders (distinct), Total Customers (distinct)
 - Donut chart: segment share of total sales
@@ -141,7 +141,7 @@ Comparison of Consumer, Corporate and Home Office segments.
 - Line chart: monthly sales trend split by segment
 - Slicers: Year, Region, Category, Segment
 
-### Page 4 — YoY Analysis
+### Page 4 - YoY Analysis
 Year-over-year and year-to-date comparison with full slicer interactivity.
 - KPI cards: Sales Current Year, Sales Last Year, Sales YoY %, Best Month, Avg Monthly Sales
 - Line chart: monthly sales current year vs last year
@@ -167,7 +167,7 @@ IF(
 )
 ```
 
-### YoY — Last Year Sales respecting all slicer filters
+### YoY - Last Year Sales respecting all slicer filters
 The core challenge: `ALL(orders)` removes filters propagated from dimension tables
 through relationships. Solution: SUMX + FILTER + IN VALUES preserves slicer context
 while overriding only the year filter.
@@ -224,7 +224,7 @@ RETURN "Sales " & SelectedYear
 - Python 3.x
 - XAMPP with MySQL running on port 3306
 - Power BI Desktop
-- MySQL ODBC Connector 9.7 (download from dev.mysql.com)
+- MySQL ODBC Connector 9.7 
 
 ### 1. Install Python dependencies
 ```bash
@@ -272,12 +272,12 @@ superstore-sales-dashboard/
 ## Dataset Notes
 
 The Superstore dataset is synthetic. Each order line represents a unique
-customer-product transaction. This is a characteristic of the dataset, not a data quality issue —
+customer-product transaction. This is a characteristic of the dataset, not a data quality issue -
 and it was identified and documented during exploratory analysis.
 
 ---
 
 ## Author
 
-Piotr — Data Analyst  
+Piotr Szczykutowicz  
 Stack: Python · SQL · Power BI · MySQL
